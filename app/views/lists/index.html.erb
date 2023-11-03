@@ -1,3 +1,7 @@
 <% @lists.each do |list| %>
   <%= link_to list.name, list_path(list) %>
 <% end %>
+ <hr>
+
+<%= link_to "Add new list", new_list_path %>
+<%= link_to "Create movie", new_movie_path %>
