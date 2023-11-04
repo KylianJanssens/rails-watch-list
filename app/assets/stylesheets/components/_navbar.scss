@@ -1,12 +1,50 @@
-.navbar-lewagon {
-  justify-content: space-between;
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&family=Roboto&display=swap');
+
+.navbar-watch-list {
+  display: flex;
   background: white;
+  height: 50px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  overflow: hidden;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  p {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 18px;
+    margin: 0;
+  }
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+.navbar-watch-list-content {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 30px;
+
+  img {
+    height: 50px;
+    width: auto;
+    display: block;
+
+  }
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.navbar-watch-list-content-links {
+  a {
+    color: black;
+    text-decoration: none;
+
+    &:hover {
+      color: gray;
+      text-decoration: underline;
+    }
+  }
+}
+
+#navbar-title {
+  text-decoration: none;
+  color: black;
 }

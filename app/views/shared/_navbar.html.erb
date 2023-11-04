@@ -1,1 +1,17 @@
+<div class="navbar-watch-list">
+  <div class="navbar-watch-list-content">
 
+    <%= link_to lists_path do %>
+      <%= image_tag "https://img.freepik.com/free-vector/3d-realistic-illustration-open-movie-clapperboard-clapper-isolated-background_1441-1783.jpg?w=1380&t=st=1699104275~exp=1699104875~hmac=89d84ddd63dbd879935a11c367c0ebf951693b4534c838f9450b9c1b8ab5b3b7" %>
+    <% end %>
+
+    <%= link_to lists_path, id: "navbar-title" do %>
+      <p>My Watch List</p>
+    <% end %>
+
+    <div class = navbar-watch-list-content-links>
+      <%= link_to "Add list", new_list_path, class: "me-3" %>
+      <%= link_to "Add movie", new_movie_path %>
+    </div>
+  </div>
+</div>
