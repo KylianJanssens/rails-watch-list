@@ -3,9 +3,11 @@
 </div>
 
 <div class="container">
-
-  <% @lists.each do |list| %>
-    <%= link_to list.name, list_path(list) %>
-  <% end %>
-
+  <div class="cards">
+    <% @lists.each do |list| %>
+    <%= link_to list_path(list) do%>
+      <%= render "shared/list-card", list: list %>
+      <% end %>
+    <% end %>
+  </div>
 </div>

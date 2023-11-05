@@ -1,11 +1,32 @@
-<h1><%= @list.name %></h1>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= @list.image_url %>)">
+  <h1><%= @list.name %></h1>
+</div>
+
+<div class="container">
+  <div class="list-container-action">
+    <%= link_to new_list_bookmark_path(@list) do %>
+      <button type="button" class="btn btn-outline-success">Add movie</button>
+    <% end %>
+  </div>
+</div>
+
+<% @list.movies.each do |movie| %>
+
+<div class="list-card">
+  <%= image_tag "#{movie.poster_url}" %>
+  <div class="list-card-infos">
+    <div>
+      <h2><%= movie.title %></h2>
+      <p><%= movie.overview %></p>
+      <p><%= movie.rating %></p>
+    </div>
+  </div>
+</div>
+<% end %>
 
 
-<%= link_to "Add movie", new_list_bookmark_path(@list) %>
-
-<%= link_to "See all lists", lists_path %>
-
-<%= link_to "Delete",
-  list_path(@list),
-  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-%>
+<div>
+  <%= link_to list_path(@list), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+    <button type="button" class="btn btn-outline-danger">Delete this List</button>
+  <% end %>
+</div>
