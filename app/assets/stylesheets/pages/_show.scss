@@ -3,3 +3,40 @@
   display: flex;
   justify-content: flex-end;
 }
+
+.movie-cards{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
+}
+
+.movie-card{
+  background-color: white;
+  overflow: hidden;
+  width: auto;
+
+  img{
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.movie-card-info{
+  padding: 15px 15px 0px 15px;
+}
+
+.movie-card-actions {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-bottom: 10px;
+}
+
+.showpage-action {
+display: flex;
+justify-content: center;
+background-color: white;
+margin-top: 20px;
+height: 57px;
+align-items: center;
+}

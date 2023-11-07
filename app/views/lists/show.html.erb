@@ -10,22 +10,30 @@
   </div>
 </div>
 
-<% @list.movies.each do |movie| %>
-
-<div class="list-card">
-  <%= image_tag "#{movie.poster_url}" %>
-  <div class="list-card-infos">
-    <div>
-      <h2><%= movie.title %></h2>
-      <p><%= movie.overview %></p>
-      <p><%= movie.rating %></p>
-    </div>
+<div class="container">
+  <div class="movie-cards">
+    <% @list.movies.each do |movie| %>
+    <% bookmark = Bookmark.find_by(list: @list, movie: movie) %>
+      <div class="movie-card">
+        <%= image_tag "#{movie.poster_url}" %>
+        <div class="movie-card-info">
+          <div>
+            <h3><%= movie.title %>  .  <%= number_with_precision(movie.rating, precision: 1) %> ⭐️</h2>
+            <p><%= movie.overview %></p>
+          </div>
+            <p>"<%= bookmark.comment %>"</p>
+            <div class="movie-card-actions">
+              <%= link_to bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+                <i class="fa-solid fa-trash" style="color: #000000;"></i>
+              <% end %>
+            </div>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>
-<% end %>
 
-
-<div>
+<div class="showpage-action">
   <%= link_to list_path(@list), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
     <button type="button" class="btn btn-outline-danger">Delete this List</button>
   <% end %>
