@@ -14,15 +14,52 @@
 lists = %w(Action Horror Comedy Thriller Romance Adventure Fantasy Historical Crime)
 
 
-List.create(name: "Action", image_url: "https://images.unsplash.com/photo-1552072092-7f9b8d63efcb?auto=format&fit=crop&q=80&w=2970&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
-List.create(name: "Horror", image_url: "https://images.unsplash.com/photo-1601513445506-2ab0d4fb4229?auto=format&fit=crop&q=80&w=2016&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
-List.create(name: "Thriller", image_url: "https://plus.unsplash.com/premium_photo-1672412085974-a14475a54a6d?auto=format&fit=crop&q=80&w=2971&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
-List.create(name: "Romance", image_url: "https://images.unsplash.com/photo-1474552226712-ac0f0961a954?auto=format&fit=crop&q=80&w=2971&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
-List.create(name: "Fantasy", image_url: "https://images.unsplash.com/photo-1499343162160-cd1441923dd3?auto=format&fit=crop&q=80&w=2970&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
-List.create(name: "Historical", image_url: "https://images.unsplash.com/photo-1682686580003-22d3d65399a8?auto=format&fit=crop&q=80&w=3131&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
-List.create(name: "Crime", image_url: "https://images.unsplash.com/photo-1532077795300-c4b487f601f6?auto=format&fit=crop&q=80&w=3087&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
-
 require "open-uri"
+
+file = URI.open("https://images.unsplash.com/photo-1552072092-7f9b8d63efcb?auto=format&fit=crop&q=80&w=2970&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+list = List.new(name: "Action")
+list.photo.attach(io: file, filename: "action.png", content_type: "image/png")
+list.save
+
+file = URI.open("https://images.unsplash.com/photo-1601513445506-2ab0d4fb4229?auto=format&fit=crop&q=80&w=2016&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+list = List.new(name: "Horror")
+list.photo.attach(io: file, filename: "Horror.png", content_type: "image/png")
+list.save
+
+file = URI.open("https://plus.unsplash.com/premium_photo-1672412085974-a14475a54a6d?auto=format&fit=crop&q=80&w=2971&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+list = List.new(name: "Thriller")
+list.photo.attach(io: file, filename: "Thriller.png", content_type: "image/png")
+list.save
+
+file = URI.open("https://images.unsplash.com/photo-1474552226712-ac0f0961a954?auto=format&fit=crop&q=80&w=2971&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+list = List.new(name: "Romance")
+list.photo.attach(io: file, filename: "Romance.png", content_type: "image/png")
+list.save
+
+file = URI.open("https://images.unsplash.com/photo-1499343162160-cd1441923dd3?auto=format&fit=crop&q=80&w=2970&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+list = List.new(name: "Fantasy")
+list.photo.attach(io: file, filename: "Fantasy.png", content_type: "image/png")
+list.save
+
+file = URI.open("https://images.unsplash.com/photo-1682686580003-22d3d65399a8?auto=format&fit=crop&q=80&w=3131&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+list = List.new(name: "Historical")
+list.photo.attach(io: file, filename: "Historical.png", content_type: "image/png")
+list.save
+
+file = URI.open("https://images.unsplash.com/photo-1532077795300-c4b487f601f6?auto=format&fit=crop&q=80&w=3087&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+list = List.new(name: "Crime")
+list.photo.attach(io: file, filename: "Crime.png", content_type: "image/png")
+list.save
+
+# List.create(name: "Action", image_url: "https://images.unsplash.com/photo-1552072092-7f9b8d63efcb?auto=format&fit=crop&q=80&w=2970&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+# List.create(name: "Horror", image_url: "https://images.unsplash.com/photo-1601513445506-2ab0d4fb4229?auto=format&fit=crop&q=80&w=2016&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+# List.create(name: "Thriller", image_url: "https://plus.unsplash.com/premium_photo-1672412085974-a14475a54a6d?auto=format&fit=crop&q=80&w=2971&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+# List.create(name: "Romance", image_url: "https://images.unsplash.com/photo-1474552226712-ac0f0961a954?auto=format&fit=crop&q=80&w=2971&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+# List.create(name: "Fantasy", image_url: "https://images.unsplash.com/photo-1499343162160-cd1441923dd3?auto=format&fit=crop&q=80&w=2970&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+# List.create(name: "Historical", image_url: "https://images.unsplash.com/photo-1682686580003-22d3d65399a8?auto=format&fit=crop&q=80&w=3131&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+# List.create(name: "Crime", image_url: "https://images.unsplash.com/photo-1532077795300-c4b487f601f6?auto=format&fit=crop&q=80&w=3087&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+
+
 require "json"
 
 puts "Cleaning up database..."
